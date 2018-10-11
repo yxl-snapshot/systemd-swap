@@ -1,11 +1,14 @@
 ## systemd-swap
 Script for manage swap on:
-* zswap - Enable/Configure
-* zram - Autoconfigurating
+* [zswap](https://www.kernel.org/doc/Documentation/vm/zswap.txt) - Enable/Configure
+* [zram](https://www.kernel.org/doc/Documentation/blockdev/zram.txt) - Autoconfigurating for swap
 * files - (sparse files for saving space, support btrfs)
 * block devices - auto find and do swapon
 
 It is configurable in /etc/systemd/swap.conf.
+
+Additional terms:
+* SwapFC (File Chunked) - provide a dynamic swap file allocation/deallocation
 
 ## Files placed:
 ```
@@ -25,6 +28,12 @@ It is configurable in /etc/systemd/swap.conf.
 $ git clone https://github.com/Nefelim4ag/systemd-swap.git
 $ ./systemd-swap/package.sh debian
 $ sudo dpkg -i ././systemd-swap/systemd-swap-*any.deb
+```
+* Fedora: use [package.sh](https://raw.githubusercontent.com/Nefelim4ag/systemd-swap/master/package.sh) $
+```
+$ git clone https://github.com/Nefelim4ag/systemd-swap.git
+$ ./systemd-swap/package.sh fedora f28
+$ sudo dnf install ./systemd-swap/systemd-swap-*noarch.rpm
 ```
 * Manual
 ```
